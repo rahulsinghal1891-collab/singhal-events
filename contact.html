@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Singhal Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    
+    <style>
+        :root { --blue: #002366; --gold: #D4AF37; --bg: #f4f7f6; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg); color: #333; }
+
+        /* Navigation */
+        nav { background: #fff; padding: 20px 8%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { font-family: 'Playfair Display'; font-size: 1.8rem; color: var(--blue); text-decoration: none; font-weight: bold; }
+        .nav-links { list-style: none; display: flex; gap: 25px; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 600; text-transform: uppercase; font-size: 0.85rem; }
+
+        /* Header Section */
+        .contact-header { background: var(--blue); color: white; padding: 80px 5%; text-align: center; }
+        .contact-header h1 { font-family: 'Playfair Display'; font-size: 3rem; color: var(--gold); margin-bottom: 10px; }
+
+        /* Main Content */
+        .container { max-width: 1100px; margin: -50px auto 50px; display: grid; grid-template-columns: 1fr 1.5fr; gap: 30px; padding: 0 20px; }
+
+        /* Left side - Info */
+        .info-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .info-card h2 { font-family: 'Playfair Display'; color: var(--blue); margin-bottom: 30px; }
+        .contact-item { display: flex; align-items: flex-start; margin-bottom: 25px; }
+        .contact-item i { color: var(--gold); font-size: 1.5rem; margin-right: 15px; margin-top: 5px; }
+        .contact-item div h4 { color: var(--blue); font-size: 1.1rem; }
+        .contact-item div p { color: #666; font-size: 0.9rem; }
+
+        /* Right side - Form */
+        .form-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .form-card input, .form-card textarea { width: 100%; padding: 15px; margin-bottom: 20px; border: 1px solid #ddd; border-radius: 8px; font-family: inherit; }
+        .btn-whatsapp { background: #25d366; color: white; border: none; padding: 15px; width: 100%; border-radius: 8px; font-weight: bold; font-size: 1.1rem; cursor: pointer; transition: 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
+        .btn-whatsapp:hover { background: #128c7e; transform: translateY(-3px); }
+
+        @media (max-width: 850px) { .container { grid-template-columns: 1fr; margin-top: 20px; } }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Singhal Events</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="contact-header">
+        <h1>Contact Us</h1>
+        <p>Planning an event? Let's talk!</p>
+    </div>
+
+    <div class="container">
+        <div class="info-card">
+            <h2>Contact Info</h2>
+            <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                    <h4>Our Location</h4>
+                    <p>Dehradun, Uttarakhand</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <div>
+                    <h4>Call Us</h4>
+                    <p>+91 6398061891</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                    <h4>Email Us</h4>
+                    <p>rahulsinghal1891@gmail.com</p>
+                </div>
+            </div>
+            <div class="contact-item">
+                <i class="fab fa-instagram"></i>
+                <div>
+                    <h4>Follow Us</h4>
+                    <p>@itsmesingal09</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-card">
+            <h2 style="margin-bottom: 20px; font-family: 'Playfair Display'; color: var(--blue);">Send a Message</h2>
+            <form id="waForm">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="text" id="subject" placeholder="Event Type (Wedding, Birthday, etc.)" required>
+                <textarea id="msg" rows="5" placeholder="Your Message..." required></textarea>
+                
+                <button type="button" onclick="sendToWA()" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Send on WhatsApp
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function sendToWA() {
+            let name = document.getElementById('name').value;
+            let sub = document.getElementById('subject').value;
+            let message = document.getElementById('msg').value;
+
+            if(name == "" || sub == "" || message == "") {
+                alert("Please fill all fields!");
+                return;
+            }
+
+            let finalMsg = `*New Inquiry from Website*%0A*Name:* ${name}%0A*Event:* ${sub}%0A*Message:* ${message}`;
+            window.open(`https://wa.me/916398061891?text=${finalMsg}`, '_blank');
+        }
+    </script>
+
+</body>
+</html>

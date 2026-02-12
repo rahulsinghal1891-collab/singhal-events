@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Gallery | Singhal Events</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --blue: #002366; --gold: #D4AF37; --white: #ffffff; }
+        body { font-family: 'Poppins', sans-serif; margin: 0; background: #fdfdfd; }
+        
+        .header { background: var(--blue); color: white; text-align: center; padding: 60px 20px; }
+        .header h1 { font-family: 'Playfair Display'; font-size: 3rem; color: var(--gold); margin: 0; }
+
+        /* Section Styling */
+        .section-title { text-align: center; padding: 40px 0; background: #f4f4f4; margin-top: 20px; }
+        .section-title h2 { font-family: 'Playfair Display'; font-size: 2.5rem; color: var(--blue); border-bottom: 3px solid var(--gold); display: inline-block; }
+
+        .container { padding: 40px 8%; }
+
+        /* Grid Layout */
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 250px; object-fit: cover; }
+        .card-info { padding: 20px; text-align: center; }
+        .card-info h3 { color: var(--blue); margin: 0; }
+        .card-info p { color: #666; font-size: 0.9rem; }
+
+        footer { background: var(--blue); color: white; text-align: center; padding: 50px 20px; margin-top: 50px; }
+        .quote { font-style: italic; font-size: 1.5rem; color: var(--gold); margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Singhal Events & Cream Bell Gallery</h1>
+        <p>Premium Services for Unforgettable Memories</p>
+    </div>
+
+    <div class="section-title"><h2>🍦 Cream Bell Ice Cream Palette</h2></div>
+    <div class="container">
+        <div class="gallery-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7" alt="Cone">
+                <div class="card-info"><h3>Classic Cones</h3><p>Chocolate, Butterscotch, Vanilla</p></div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a" alt="Tubs">
+                <div class="card-info"><h3>Royal Tubs</h3><p>Rajbhog, Shahi Kulfi, Kesar Pista</p></div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb" alt="Kulfi">
+                <div class="card-info"><h3>Authentic Kulfi</h3><p>Matka Kulfi, Stick Kulfi, Paan Flavors</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title"><h2>💍 Wedding Special Effects</h2></div>
+    <div class="container">
+        <div class="gallery-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552" alt="Entry">
+                <div class="card-info"><h3>Grand Entry</h3><p>Cold Pyro, Sparkle Guns, Fog Shoot</p></div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622" alt="Venue">
+                <div class="card-info"><h3>Luxury Venues</h3><p>Stage Decor & Sparkling Ambience</p></div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1470225620780-dba8ba36b745" alt="Sparkle">
+                <div class="card-info"><h3>Phatake & Pyros</h3><p>Sky Shots & Professional Sparkle Shows</p></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title"><h2>🎧 Entertainment & Catering</h2></div>
+    <div class="container">
+        <div class="gallery-grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1514525253361-bee8718a300c" alt="DJ">
+                <div class="card-info"><h3>Premium DJ Setup</h3><p>High-Bass Sound & LED Dance Floor</p></div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1555244162-803834f70033" alt="Catering">
+                <div class="card-info"><h3>Gourmet Catering</h3><p>Traditional & Multi-Cuisine Food</p></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="quote">"Making your sweetest dreams come true, one scoop and one sparkle at a time."</div>
+        <p>📧 Email us: <strong>singhalevents.ddun@gmail.com</strong></p>
+        <p>© 2026 Singhal Events | Dehradun</p>
+    </footer>
+
+</body>
+</html>
